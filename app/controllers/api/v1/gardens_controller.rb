@@ -45,6 +45,40 @@ module Api
 				end
 			end
 
+			def update
+				garden = Garden.find(params[:id])
+				if garden.update_attributes(garden_params)
+					render json: {
+						status: 'Success!',
+						message: 'Garden was successfully updated',
+						data: garden
+					}, status: :ok
+				else
+					render json: {
+						status: 'Something went wrong',
+						message: error_message,
+						data: garden.errors
+					}, status: :ok
+				end
+			end
+
+			def destroy
+				garden = Garden.find(params[:id])
+				if garden.destroy
+					render json: {
+						status: 'Success!',
+						message: 'Garden was removed from the database.',
+						data: garden
+					}, status: :ok
+				else
+					render json: {
+						status: 'Something went wrong.',
+						message: error_message,
+						data: garden.errors
+					}, status: :ok
+				end
+			end
+
 			private
 
 			def error_message

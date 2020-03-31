@@ -746,3 +746,52 @@ Processing by Api::V1::GardensController#show as */*
 Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 941)
 
 
+Started PUT "/api/v1/gardens/1" for ::1 at 2020-03-31 17:06:31 -0500
+  
+SyntaxError (/Users/ididntwantthis/Post-Bootcamp/Ruby-Projects/AutoEden/app/controllers/api/v1/gardens_controller.rb:80: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/api/v1/gardens_controller.rb:80: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/gardens_controller.rb:80: syntax error, unexpected end-of-input, expecting end
+Started PUT "/api/v1/gardens/1" for ::1 at 2020-03-31 17:06:46 -0500
+Processing by Api::V1::GardensController#update as */*
+  Parameters: {"garden_name"=>"Indoor Tent", "garden_type"=>"Medicinal", "garden_medium"=>"Soil", "id"=>"1", "garden"=>{"garden_name"=>"Indoor Tent", "garden_type"=>"Medicinal", "garden_medium"=>"Soil"}}
+  [1m[36mGarden Load (0.3ms)[0m  [1m[34mSELECT "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/gardens_controller.rb:49:in `update'
+[31mUnpermitted parameters: :id, :garden[0m
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/ididntwantthis/Post-Bootcamp/Ruby-Projects/AutoEden/app/controllers/api/v1/gardens_controller.rb:50)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/gardens_controller.rb:50:in `update'
+  [1m[36mGarden Update (0.4ms)[0m  [1m[33mUPDATE "gardens" SET "garden_name" = $1, "updated_at" = $2 WHERE "gardens"."id" = $3[0m  [["garden_name", "Indoor Tent"], ["updated_at", "2020-03-31 22:06:46.430435"], ["id", 1]]
+  ↳ app/controllers/api/v1/gardens_controller.rb:50:in `update'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/gardens_controller.rb:50:in `update'
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 5.8ms | Allocations: 7222)
+
+
+Started DELETE "/api/v1/gardens/1" for ::1 at 2020-03-31 17:10:21 -0500
+  
+SyntaxError (/Users/ididntwantthis/Post-Bootcamp/Ruby-Projects/AutoEden/app/controllers/api/v1/gardens_controller.rb:97: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/api/v1/gardens_controller.rb:97: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/gardens_controller.rb:97: syntax error, unexpected end-of-input, expecting end
+Started DELETE "/api/v1/gardens/1" for ::1 at 2020-03-31 17:10:30 -0500
+Processing by Api::V1::GardensController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mGarden Load (0.3ms)[0m  [1m[34mSELECT "gardens".* FROM "gardens" WHERE "gardens"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/gardens_controller.rb:66:in `destroy'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/gardens_controller.rb:67:in `destroy'
+  [1m[36mGarden Destroy (0.7ms)[0m  [1m[31mDELETE FROM "gardens" WHERE "gardens"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/api/v1/gardens_controller.rb:67:in `destroy'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/gardens_controller.rb:67:in `destroy'
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 4.7ms | Allocations: 7268)
+
+
+Started GET "/api/v1/gardens" for ::1 at 2020-03-31 17:10:44 -0500
+Processing by Api::V1::GardensController#index as */*
+  [1m[36mGarden Load (0.6ms)[0m  [1m[34mSELECT "gardens".* FROM "gardens" ORDER BY created_at DESC[0m
+  ↳ app/controllers/api/v1/gardens_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.6ms | Allocations: 901)
+
+
