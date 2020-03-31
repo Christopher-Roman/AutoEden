@@ -22,10 +22,41 @@ module Api
 				else
 					render json: {
 						status: 'Something went wrong.',
-						message: 'See error message to find out what happened.',
+						message: error_message,
 						data: garden.errors
 					}, status: :ok
 				end
+			end
+
+			def create
+				garden = Garden.new(garden_params)
+				if garden.save
+					render json: {
+						status: 'Success!',
+						message: 'Garden was successfully added!',
+						data: garden
+					}, status: :ok
+				else
+					render json: {
+						status: 'Something went wrong.',
+						message: error_message,
+						data: garden.errors
+					}, status: :ok
+				end
+			end
+
+			private
+
+			def error_message
+				'See error message to find out what happend.'
+			end
+
+			def garden_params
+				params.permit(
+					:garden_name,
+					:garden_type,
+					:garden_medium
+				)
 			end
 
 		end
