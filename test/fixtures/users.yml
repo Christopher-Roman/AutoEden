@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: MyString
+  user_email: MyString
+  gardening_experience: 1
+  nickname: MyString
+  preferred_pronoun: MyString
+  favorite_plant: MyString
+  pref_gardening_medium: MyString
+  country: MyString
+  state_or_province: MyString
+
+two:
+  username: MyString
+  user_email: MyString
+  gardening_experience: 1
+  nickname: MyString
+  preferred_pronoun: MyString
+  favorite_plant: MyString
+  pref_gardening_medium: MyString
+  country: MyString
+  state_or_province: MyString

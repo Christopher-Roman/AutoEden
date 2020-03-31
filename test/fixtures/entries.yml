@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  feeding_day: false
+  watering_day: false
+  defoil: false
+  training: false
+  water_ph_levels: 1
+  soil_ph_levels: 1
+  nutrients_used: MyString
+  temp: 1
+  relative_humidity: 1
+  training: MyString
+  explanation: MyText
+  notes: MyText
+
+two:
+  feeding_day: false
+  watering_day: false
+  defoil: false
+  training: false
+  water_ph_levels: 1
+  soil_ph_levels: 1
+  nutrients_used: MyString
+  temp: 1
+  relative_humidity: 1
+  training: MyString
+  explanation: MyText
+  notes: MyText

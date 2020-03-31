@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  journal_name: MyString
+  journal_type: MyString
+  archive: false
+
+two:
+  journal_name: MyString
+  journal_type: MyString
+  archive: false
