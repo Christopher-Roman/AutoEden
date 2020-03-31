@@ -81,7 +81,17 @@ module Api
 			private
 
 			def user_params
-				params.permit(:username, :user_email, :gardening_experience, :nickname, :preferred_pronoun, :favorite_plant, :pref_gardening_medium, :country, :state_or_province)
+				params.permit(
+					:username, 
+					:user_email, 
+					:gardening_experience, 
+					:nickname, 
+					:preferred_pronoun, 
+					:favorite_plant, 
+					:pref_gardening_medium, 
+					:country, 
+					:state_or_province
+					)
 			end
 
 		end
