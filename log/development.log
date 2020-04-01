@@ -795,3 +795,127 @@ Processing by Api::V1::GardensController#index as */*
 Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.6ms | Allocations: 901)
 
 
+Started GET "/api/v1/journals" for ::1 at 2020-04-01 13:57:56 -0500
+Processing by Api::V1::JournalsController#index as */*
+  [1m[36mJournal Load (2.0ms)[0m  [1m[34mSELECT "journals".* FROM "journals" ORDER BY created_at DESC[0m
+  ↳ app/controllers/api/v1/journals_controller.rb:7:in `index'
+Completed 200 OK in 10ms (Views: 2.5ms | ActiveRecord: 5.2ms | Allocations: 1930)
+
+
+Started GET "/api/v1/journals" for ::1 at 2020-04-01 13:58:08 -0500
+Processing by Api::V1::JournalsController#index as */*
+  [1m[36mJournal Load (0.3ms)[0m  [1m[34mSELECT "journals".* FROM "journals" ORDER BY created_at DESC[0m
+  ↳ app/controllers/api/v1/journals_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.3ms | Allocations: 890)
+
+
+Started GET "/api/v1/journals/1" for ::1 at 2020-04-01 13:58:14 -0500
+Processing by Api::V1::JournalsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mJournal Load (0.4ms)[0m  [1m[34mSELECT "journals".* FROM "journals" WHERE "journals"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/journals_controller.rb:15:in `show'
+Completed 404 Not Found in 9ms (ActiveRecord: 5.6ms | Allocations: 753)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Journal with 'id'=1):
+  
+app/controllers/api/v1/journals_controller.rb:15:in `show'
+Started POST "/api/v1/journals" for ::1 at 2020-04-01 14:00:11 -0500
+Processing by Api::V1::JournalsController#create as */*
+  Parameters: {"journal_name"=>"Closet Grow", "journal_type"=>"Tracking", "archive"=>"false", "journal"=>{"journal_name"=>"Closet Grow", "journal_type"=>"Tracking", "archive"=>"false"}}
+[31mUnpermitted parameter: :journal[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/journals_controller.rb:25:in `create'
+  [1m[36mJournal Create (3.8ms)[0m  [1m[32mINSERT INTO "journals" ("journal_name", "journal_type", "archive", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["journal_name", "Closet Grow"], ["journal_type", "Tracking"], ["archive", false], ["created_at", "2020-04-01 19:00:11.262214"], ["updated_at", "2020-04-01 19:00:11.262214"]]
+  ↳ app/controllers/api/v1/journals_controller.rb:25:in `create'
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/journals_controller.rb:25:in `create'
+Completed 200 OK in 25ms (Views: 0.5ms | ActiveRecord: 9.8ms | Allocations: 6313)
+
+
+Started GET "/api/v1/journals" for ::1 at 2020-04-01 14:00:36 -0500
+Processing by Api::V1::JournalsController#index as */*
+  [1m[36mJournal Load (0.3ms)[0m  [1m[34mSELECT "journals".* FROM "journals" ORDER BY created_at DESC[0m
+  ↳ app/controllers/api/v1/journals_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.3ms | Allocations: 1032)
+
+
+Started DELETE "/api/v1/journals/1" for ::1 at 2020-04-01 14:00:47 -0500
+Processing by Api::V1::JournalsController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mJournal Load (0.4ms)[0m  [1m[34mSELECT "journals".* FROM "journals" WHERE "journals"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/journals_controller.rb:58:in `destroy'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/journals_controller.rb:59:in `destroy'
+  [1m[36mJournal Destroy (2.7ms)[0m  [1m[31mDELETE FROM "journals" WHERE "journals"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/api/v1/journals_controller.rb:59:in `destroy'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/journals_controller.rb:59:in `destroy'
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 3.9ms | Allocations: 2408)
+
+
+Started POST "/api/v1/journals" for ::1 at 2020-04-01 14:00:59 -0500
+Processing by Api::V1::JournalsController#create as */*
+  Parameters: {"journal_name"=>"Closet Grow", "journal_type"=>"Tracking", "archive"=>"false", "journal"=>{"journal_name"=>"Closet Grow", "journal_type"=>"Tracking", "archive"=>"false"}}
+[31mUnpermitted parameter: :journal[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/journals_controller.rb:25:in `create'
+  [1m[36mJournal Create (0.5ms)[0m  [1m[32mINSERT INTO "journals" ("journal_name", "journal_type", "archive", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["journal_name", "Closet Grow"], ["journal_type", "Tracking"], ["archive", false], ["created_at", "2020-04-01 19:00:59.057335"], ["updated_at", "2020-04-01 19:00:59.057335"]]
+  ↳ app/controllers/api/v1/journals_controller.rb:25:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/journals_controller.rb:25:in `create'
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.0ms | Allocations: 2375)
+
+
+Started GET "/api/v1/journals/2" for ::1 at 2020-04-01 14:02:11 -0500
+Processing by Api::V1::JournalsController#show as */*
+  Parameters: {"journal_name"=>"Closet Grow", "journal_type"=>"Tracking Errors", "archive"=>"true", "id"=>"2", "journal"=>{"journal_name"=>"Closet Grow", "journal_type"=>"Tracking Errors", "archive"=>"true"}}
+  [1m[36mJournal Load (2.5ms)[0m  [1m[34mSELECT "journals".* FROM "journals" WHERE "journals"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/journals_controller.rb:15:in `show'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 2.5ms | Allocations: 770)
+
+
+Started PUT "/api/v1/journals/2" for ::1 at 2020-04-01 14:02:26 -0500
+Processing by Api::V1::JournalsController#update as */*
+  Parameters: {"journal_name"=>"Closet Grow", "journal_type"=>"Tracking Errors", "archive"=>"true", "id"=>"2", "journal"=>{"journal_name"=>"Closet Grow", "journal_type"=>"Tracking Errors", "archive"=>"true"}}
+Completed 404 Not Found in 0ms (ActiveRecord: 0.0ms | Allocations: 139)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Journal without an ID):
+  
+app/controllers/api/v1/journals_controller.rb:41:in `update'
+Started GET "/api/v1/journals" for ::1 at 2020-04-01 14:02:39 -0500
+Processing by Api::V1::JournalsController#index as */*
+  [1m[36mJournal Load (1.7ms)[0m  [1m[34mSELECT "journals".* FROM "journals" ORDER BY created_at DESC[0m
+  ↳ app/controllers/api/v1/journals_controller.rb:7:in `index'
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 1.7ms | Allocations: 1023)
+
+
+Started PUT "/api/v1/journals/2" for ::1 at 2020-04-01 14:03:05 -0500
+Processing by Api::V1::JournalsController#update as */*
+  Parameters: {"journal_name"=>"Closet Grow", "journal_type"=>"Tracking Errors", "archive"=>"true", "id"=>"2", "journal"=>{"journal_name"=>"Closet Grow", "journal_type"=>"Tracking Errors", "archive"=>"true"}}
+Completed 404 Not Found in 0ms (ActiveRecord: 0.0ms | Allocations: 134)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Journal without an ID):
+  
+app/controllers/api/v1/journals_controller.rb:41:in `update'
+Started PUT "/api/v1/journals/2" for ::1 at 2020-04-01 14:03:25 -0500
+Processing by Api::V1::JournalsController#update as */*
+  Parameters: {"journal_name"=>"Closet Grow", "journal_type"=>"Tracking Errors", "archive"=>"true", "id"=>"2", "journal"=>{"journal_name"=>"Closet Grow", "journal_type"=>"Tracking Errors", "archive"=>"true"}}
+  [1m[36mJournal Load (0.3ms)[0m  [1m[34mSELECT "journals".* FROM "journals" WHERE "journals"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/journals_controller.rb:41:in `update'
+[31mUnpermitted parameters: :id, :journal[0m
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/ididntwantthis/Post-Bootcamp/Ruby-Projects/AutoEden/app/controllers/api/v1/journals_controller.rb:42)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/journals_controller.rb:42:in `update'
+  [1m[36mJournal Update (0.3ms)[0m  [1m[33mUPDATE "journals" SET "journal_type" = $1, "archive" = $2, "updated_at" = $3 WHERE "journals"."id" = $4[0m  [["journal_type", "Tracking Errors"], ["archive", true], ["updated_at", "2020-04-01 19:03:25.112842"], ["id", 2]]
+  ↳ app/controllers/api/v1/journals_controller.rb:42:in `update'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/journals_controller.rb:42:in `update'
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 3.8ms | Allocations: 7097)
+
+

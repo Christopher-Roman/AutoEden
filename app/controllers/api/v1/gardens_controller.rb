@@ -24,7 +24,7 @@ module Api
 						status: 'Something went wrong.',
 						message: error_message,
 						data: garden.errors
-					}, status: :ok
+					}, status: :unprocessable_entity
 				end
 			end
 
@@ -41,7 +41,7 @@ module Api
 						status: 'Something went wrong.',
 						message: error_message,
 						data: garden.errors
-					}, status: :ok
+					}, status: :unprocessable_entity
 				end
 			end
 
@@ -58,7 +58,7 @@ module Api
 						status: 'Something went wrong',
 						message: error_message,
 						data: garden.errors
-					}, status: :ok
+					}, status: :unprocessable_entity
 				end
 			end
 
@@ -75,7 +75,7 @@ module Api
 						status: 'Something went wrong.',
 						message: error_message,
 						data: garden.errors
-					}, status: :ok
+					}, status: :unprocessable_entity
 				end
 			end
 
