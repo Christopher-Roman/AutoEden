@@ -7,13 +7,13 @@ Rails.application.routes.draw do
 
   		resources :users
 
-  		resources :gardens
+  		resources :gardens do
+  		  resources :plants
+      end
 
-  		resources :journals
-
-  		resources :plants
-  		
-  		resources :entries
+  		resources :journals do
+  		  resources :entries
+      end
 
   	end
 
