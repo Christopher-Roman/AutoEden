@@ -5,8 +5,8 @@ class CreateEntries < ActiveRecord::Migration[6.0]
       t.boolean :watering_day
       t.boolean :defoil
       t.boolean :training_applied
-      t.integer :water_ph_levels
-      t.integer :soil_ph_levels
+      t.float :water_ph_levels
+      t.float :soil_ph_levels
       t.string :nutrients_used
       t.integer :temp
       t.integer :relative_humidity
