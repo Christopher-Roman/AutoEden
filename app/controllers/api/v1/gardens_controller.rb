@@ -89,7 +89,8 @@ module Api
 				params.permit(
 					:garden_name,
 					:garden_type,
-					:garden_medium
+					:garden_medium,
+					:user_id
 				)
 			end
 

@@ -77,7 +77,8 @@ module Api
 				params.permit(
 					:journal_name,
 					:journal_type,
-					:archive
+					:archive,
+					:user_id
 				)
 			end
 		end
